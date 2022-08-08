@@ -29,6 +29,8 @@
    justify-content: center;
     height: 30vh;
     border-bottom: 0.01rem solid lightgrey;
+    flex-direction: column;
+   
      
   }
   .card__button{
@@ -39,6 +41,7 @@
   .card__div1{
     display: flex;
     flex-direction: row;
+    
   }
   .card__list{
     display: flex;
@@ -52,5 +55,10 @@
   .card__list h5{
     margin: 0;
     flex: auto;
+  }
+  .card__info{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
   }
   

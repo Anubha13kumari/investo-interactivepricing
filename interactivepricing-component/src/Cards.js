@@ -5,6 +5,11 @@ import Button from "@mui/material/Button";
 import iconCheckImage from "./assets/images/icon-check.svg";
 import Slider, { SliderThumb } from "@mui/material/Slider";
 import sliderIcon from "./assets/images/icon-slider.svg";
+import Switch from '@mui/material/Switch';
+
+
+
+const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
 function Cards() {
   return (
@@ -30,6 +35,11 @@ function Cards() {
                 color: "hsl(174, 77%, 80%)",
               }}
             />
+            <div className="card__info">
+         <h5>Monthly Billing</h5>
+          <Switch {...label} />
+          <h5>Yearly Billing</h5>
+          </div>
           </div>
           <div className="card__div1">
             <div className="card__list">
