@@ -5,11 +5,10 @@ import Button from "@mui/material/Button";
 import iconCheckImage from "./assets/images/icon-check.svg";
 import Slider, { SliderThumb } from "@mui/material/Slider";
 import sliderIcon from "./assets/images/icon-slider.svg";
-import Switch from '@mui/material/Switch';
+import Switch from "@mui/material/Switch";
+import { color } from "@mui/system";
 
-
-
-const label = { inputProps: { 'aria-label': 'Switch demo' } };
+const label = { inputProps: { "aria-label": "Switch demo" } };
 
 function Cards() {
   return (
@@ -23,10 +22,17 @@ function Cards() {
       </div>
       <div className="cards__container">
         <Card className="card">
-          <div className="card__div">
+          <div className="card__sliderdiv">
             {/* <SliderThumb >
             <img src={sliderIcon} alt=""></img>
           </SliderThumb> */}
+            <div className="card__heading">
+              <h5>100K PAGEVIEWS</h5>
+              <h1>
+                <strong>$16.00</strong>
+              </h1>
+              <small>/month</small>
+            </div>
             <Slider
               aria-label="Default"
               valueLabelDisplay="auto"
@@ -35,13 +41,25 @@ function Cards() {
                 color: "hsl(174, 77%, 80%)",
               }}
             />
-            <div className="card__info">
-         <h5>Monthly Billing</h5>
-          <Switch {...label} />
-          <h5>Yearly Billing</h5>
+            <div className="card__switchinfo">
+              <h5>Monthly Billing</h5>
+              <Switch {...label} style={{ color: " hsl(224, 65%, 95%)" }} />
+              <h5>Yearly Billing</h5>
+              <Button
+                style={{
+                  backgroundColor: "hsl(14, 92%, 95%)",
+                  color: "hsl(15, 100%, 70%)",
+                  borderRadius: "2rem",
+                  height: "5vh",
+                  border: "none",
+                }}
+                variant="outlined"
+              >
+                25% discount
+              </Button>
+            </div>
           </div>
-          </div>
-          <div className="card__div1">
+          <div className="card__infodiv">
             <div className="card__list">
               <h5>
                 {" "}
