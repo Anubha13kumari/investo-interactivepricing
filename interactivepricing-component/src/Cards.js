@@ -7,11 +7,52 @@ import Slider, { SliderThumb } from "@mui/material/Slider";
 import sliderIcon from "./assets/images/icon-slider.svg";
 import Switch from "@mui/material/Switch";
 import { color } from "@mui/system";
+import { styled } from "@mui/material/styles";
 
 const label = { inputProps: { "aria-label": "Switch demo" } };
 
 function Cards() {
+  const RangeSlider = styled(Slider)(({ theme }) => ({
+    color: "hsl(174, 77%, 80%)",
+    height: 3,
+    width: "25vw",
+    padding: "13px 0",
+    "& .MuiSlider-thumb": {
+      height: 27,
+      width: 27,
+      backgroundColor: "hsl(174, 77%, 50%)",
+      border: "1px solid currentColor",
+      "&:hover": {
+        boxShadow: "0 0 0 8px rgba(58, 133, 137, 0.16)",
+      },
+    },
+    "& .MuiSlider-track": {
+      height: 3,
+    },
+    "& .MuiSlider-rail": {
+      color: "hsl(174, 77%, 80%)",
+      opacity: theme.palette.mode === "dark" ? undefined : 1,
+      height: 3,
+    },
+  }));
+
+  const TrialButton = styled(Button)(({ theme }) => ({
+    borderRadius: "2rem",
+    backgroundColor: "hsl(227, 35%, 25%)",
+    color: "white",
+  }));
+  function RangeSilderThumb(props) {
+    const { children, ...other } = props;
+    return (
+      <SliderThumb {...other}>
+        {children}
+        <img src={sliderIcon} alt=""></img>
+      </SliderThumb>
+    );
+  }
+
   return (
+    
     <div className="cards__title">
       <div className="title">
         <h2>
@@ -28,18 +69,17 @@ function Cards() {
           </SliderThumb> */}
             <div className="card__heading">
               <h5>100K PAGEVIEWS</h5>
+              <div className="card__price">
               <h1>
                 <strong>$16.00</strong>
               </h1>
               <small>/month</small>
             </div>
-            <Slider
+            </div>
+            <RangeSlider
               aria-label="Default"
               valueLabelDisplay="auto"
-              style={{
-                width: "25vw",
-                color: "hsl(174, 77%, 80%)",
-              }}
+              components={{ Thumb: RangeSilderThumb }}
             />
             <div className="card__switchinfo">
               <h5>Monthly Billing</h5>
@@ -75,20 +115,18 @@ function Cards() {
               </h5>
             </div>
             <div className="card__button">
-              <Button
-                style={{
-                  borderRadius: "2rem",
-                  backgroundColor: "hsl(227, 35%, 25%)",
-                }}
+            <TrialButton
+                
                 variant="contained"
               >
                 Start my trial
-              </Button>
+              </TrialButton>
             </div>
           </div>
         </Card>
       </div>
     </div>
+   
   );
 }
 

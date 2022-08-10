@@ -17,10 +17,13 @@
   font-family: "Dosis", sans-serif;
   font-family: "Poppins", sans-serif;
   margin-left: 5rem;
+  color: black !important;
 }
 .cards__title {
   position: absolute;
-  top: 6rem;
+  /* z-index: -1000; */
+  top: 8rem;
+  /* left: calc(100% - 71rem); */
 }
 .card__sliderdiv {
   display: flex;
@@ -32,13 +35,15 @@
   flex: auto;
 }
 .card__button {
-  float: right;
-  margin-top: 3rem;
-  margin-left: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .card__infodiv {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  gap: 3rem;
 }
 .card__list {
   display: flex;
@@ -59,13 +64,46 @@
   flex-direction: row;
   margin-top: 2rem;
   flex: auto;
+  margin-left: 1rem;
+  
 }
 
 .card__heading {
   display: flex;
+  justify-content: center;
+ align-items: center;
   flex-direction: row;
+  gap: 4rem;
 }
 .card__switchinfo h5 {
   font-family: "Dosis", sans-serif;
   font-family: "Poppins", sans-serif;
+  margin: 0.5rem;
 }
+.card__heading h5{
+  font-family: "Dosis", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+.card__price{
+  flex: 2;
+}
+.card__price h1{
+  display: inline;
+}
+.card__heading h5{
+  flex: auto;
+}
+
+ @media screen and (max-width: 1440px) {
+  .card__sliderdiv{
+  object-fit: fill;
+  }
+  
+}
+
+@media screen and (max-width: 375px) {
+  .card__sliderdiv{
+    object-fit:contain;
+  }
+  
+} 

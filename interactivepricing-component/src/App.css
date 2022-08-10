@@ -7,3 +7,16 @@
   flex-direction: column;
 }
 
+@media screen and (max-width: 1440px) {
+  .App{
+  object-fit: fill;
+  }
+  
+}
+
+@media screen and (max-width: 375px) {
+  .App{
+    object-fit:contain;
+  }
+  
+} 
